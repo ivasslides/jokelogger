@@ -14,4 +14,11 @@ id = response['id']
 setup = response['setup']
 punchline = response['punchline']
 
-print(id, setup, punchline)
+#print(id, setup, punchline)
+
+#instantiating name in a logging class
+logger = logging.getLogger(__name__)
+#adding attributes
+logging.basicConfig(filename="joke.log", encoding="utf-8", level=logging.DEBUG)
+#passing three strings, injecting id setup and punchline into those three strings
+logging.warning('%s:%s:%s', id, setup, punchline)
